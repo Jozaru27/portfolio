@@ -1,76 +1,123 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Portfolio Jozaru</title>
-        <link rel="stylesheet" href="https://unpkg.com/7.css">
-        <link rel="icon" type="image/x-icon" href="media/portfolio.ico">
 
-        <style>
-            body {
-                margin: 0;
-                height: 100vh;
-                background-image: url('media/windowsvista.png');
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-position: center;
-                font-family: sans-serif;
-            }
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio Jozaru</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/7.css@0.10.0/dist/7.css">
+    <link rel="icon" type="image/x-icon" href="media/address_book_favicon.png">
+    <style>
+        body, html {
+            cursor: url('media/cursor/Normal%20Select.cur'), auto !important;
+        }
 
-            /* Contenedor principal */
-            .three-columns {
-                display: flex;
-                justify-content: space-between; /* separa columnas horizontalmente */
-                margin: 20px 0;
-            }
+        a, button, [role="button"], [onclick], input, .can-hover, summary {
+            cursor: url('media/cursor/Link%20Select.cur'), pointer !important;
+        }
 
-            /* Cada columna */
-            .column {
-                flex: 1;                  /* cada columna ocupa el mismo espacio */
-                text-align: center;       /* centra el contenido */
-                margin: 0 10px;           /* separación entre columnas */
-            }
+        body {
+            margin: 0;
+            height: 100vh;
+            background-image: url('media/windowsvista.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: sans-serif;
+        }
 
-            /* Imagen dentro de la columna */
-            .column img {
-                width: 64px;
-                height: 64px;
-                display: block;
-                margin: 0 auto 10px;      /* centra imagen y deja espacio debajo */
-            }
+        .three-columns {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
 
-            /* Título con enlace */
-            .column p {
-                text-decoration: none;
-                font-weight: bold;
-                color: #333;
-                font-size: 16px;
-            }
+        .column {
+            flex: 1;
+            text-align: center;
+            margin: 0 10px;
+        }
 
-            /* Imagen grande centrada */
-            .main-image {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 30px 0;
-            }
+        .column img {
+            width: 64px;
+            height: 64px;
+            display: block;
+            margin: 0 auto 10px;
+        }
 
-            .main-image img {
-                max-width: 25%;
-                height: auto;
-                
-            }
+        .column p {
+            text-decoration: none;
+            font-weight: bold;
+            color: #333;
+            font-size: 16px;
+            margin: 10px 0;
+        }
 
+        .column span {
+            font-size: 14px;
+            display: block;
+            color: #444;
+        }
 
-            </style>
-    </head>
+        .main-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+        }
 
-    <body>
-        <div class="background">
-            <div class="window glass active" style="max-width: 100%; margin: 1%;" >
-                <div class="title-bar">
-                
+        .main-image img {
+            max-width: 25%;
+            height: auto;
+        }
+
+        .dropdown-section {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.6s ease-in-out, opacity 0.6s ease-in-out, padding-top 0.6s ease, border-top 0.6s ease;
+            padding-top: 0;
+            border-top: 1px solid transparent;
+        }
+
+        .dropdown-section.show {
+            max-height: 1500px;
+            opacity: 1;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .project-card {
+            border: 1px solid #dfdfdf;
+            padding: 10px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .project-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <div class="window active" style="max-width: 100%; margin: 1%;">
+            <div class="title-bar">
                 <div class="title-bar-text">
                     <p style="margin: 0px; border:0px; padding:0px;">
                         <img src="media/browser.ico" alt="Favicon" width="16" height="16">
@@ -81,114 +128,253 @@
                     <button aria-label="Minimize"></button>
                     <button aria-label="Close"></button>
                 </div>
-                </div>
-                <div class="window-body has-space">
-                    <ul role="menubar" class="can-hover">
-                        <li role="menuitem" tabindex="0" aria-haspopup="true">
-                            File
-                            <ul role="menu">
-                            <li role="menuitem">
-                                <a href="https://khang-nd.github.io/7.css">
-                                Open <span>Ctrl+O</span>
-                                </a>
+            </div>
+            <div class="window-body has-space">
+                <ul role="menubar" class="can-hover">
+                    <li role="menuitem" tabindex="0" aria-haspopup="true">
+                        File
+                        <ul role="menu">
+                            <li role="menuitem"><a href="https://khang-nd.github.io/7.css">Open <span>Ctrl+O</span></a>
                             </li>
-                            <li role="menuitem">
-                                <a href="https://khang-nd.github.io/7.css">
-                                Save <span>Ctrl+S</span>
-                                </a>
+                            <li role="menuitem"><a href="https://khang-nd.github.io/7.css">Save <span>Ctrl+S</span></a>
                             </li>
-                            <li role="menuitem" class="has-divider">
-                                <a href="https://khang-nd.github.io/7.css">
-                                Save As... <span>Ctrl+Shift+S</span>
-                                </a>
-                            </li>
+                            <li role="menuitem" class="has-divider"><a href="https://khang-nd.github.io/7.css">Save
+                                    As... <span>Ctrl+Shift+S</span></a></li>
                             <li role="menuitem"><a href="https://khang-nd.github.io/7.css">Exit</a></li>
-                            </ul>
-                        </li>
-                        <li role="menuitem" tabindex="0" aria-haspopup="true">
-                            Edit
-                            <ul role="menu">
+                        </ul>
+                    </li>
+                    <li role="menuitem" tabindex="0" aria-haspopup="true">
+                        Edit
+                        <ul role="menu">
                             <li role="menuitem"><a href="https://khang-nd.github.io/7.css">Undo</a></li>
                             <li role="menuitem"><a href="https://khang-nd.github.io/7.css">Copy</a></li>
                             <li role="menuitem"><a href="https://khang-nd.github.io/7.css">Cut</a></li>
-                            <li role="menuitem" class="has-divider"><a href="https://khang-nd.github.io/7.css">Paste</a></li>
+                            <li role="menuitem" class="has-divider"><a href="https://khang-nd.github.io/7.css">Paste</a>
+                            </li>
                             <li role="menuitem"><a href="https://khang-nd.github.io/7.css">Delete</a></li>
                             <li role="menuitem"><a href="https://khang-nd.github.io/7.css">Find...</a></li>
                             <li role="menuitem"><a href="https://khang-nd.github.io/7.css">Replace...</a></li>
                             <li role="menuitem"><a href="https://khang-nd.github.io/7.css">Go to...</a></li>
-                            </ul>
-                        </li>
-                        <li role="menuitem" tabindex="0" aria-haspopup="true">
-                            View
-                            <ul role="menu">
+                        </ul>
+                    </li>
+                    <li role="menuitem" tabindex="0" aria-haspopup="true">
+                        View
+                        <ul role="menu">
                             <li role="menuitem" tabindex="0" aria-haspopup="true">
                                 Zoom
                                 <ul role="menu">
-                                <li role="menuitem"><button>Zoom In</button></li>
-                                <li role="menuitem"><button>Zoom Out</button></li>
+                                    <li role="menuitem"><button>Zoom In</button></li>
+                                    <li role="menuitem"><button>Zoom Out</button></li>
                                 </ul>
                             </li>
                             <li role="menuitem"><a href="https://khang-nd.github.io/7.css">Status Bar</a></li>
-                            </ul>
-                        </li>
-                        <li role="menuitem" tabindex="0" aria-haspopup="true">
-                            Help
-                            <ul role="menu">
+                        </ul>
+                    </li>
+                    <li role="menuitem" tabindex="0" aria-haspopup="true">
+                        Help
+                        <ul role="menu">
                             <li role="menuitem"><a href="https://khang-nd.github.io/7.css">View Help</a></li>
                             <li role="menuitem"><a href="https://khang-nd.github.io/7.css">About</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                        </ul>
+                    </li>
+                </ul>
 
-                    <div class="main-image">
-                        <img src="media/PortfolioJozaruWordart.png" alt="Imagen principal">
+                <div class="main-image">
+                    <img src="media/PortfolioJozaruWordart.png" alt="Imagen principal">
+                </div>
+
+                <div class="three-columns">
+                    <div class="column">
+                        <img src="media/attachment_sobremi.png" alt="About Me">
+                        <p>Sobre mí</p>
+                        <button onclick="toggleSection('section-sobremi')">A ver...</button>
                     </div>
-
-                    <div class="three-columns">
-                        <div class="column">
-                            <img src="media/about.png" alt="About Me">
-                            <p>Sobre mí</p><br>
-                            <button>A ver...</button>
-                        </div>
-                        <div class="column">
-                            <img src="media/carrerCV.png" alt="Carrera">
-                            <p>Carrera</p><br>
-                            <button>A ver...</button>
-                        </div>
-                        <div class="column">
-                            <img src="media/code.png" alt="Proyectos">
-                            <p>Proyectos</p><br>
-                            <button>A ver...</button>
-                        </div>
+                    <div class="column">
+                        <img src="media/browse_carrera.png" alt="Carrera">
+                        <p>Carrera</p>
+                        <button onclick="toggleSection('section-carrera')">A ver...</button>
                     </div>
+                    <div class="column">
+                        <img src="media/blogging_proyectos.png" alt="Proyectos">
+                        <p>Proyectos</p>
+                        <button onclick="toggleSection('section-proyectos')">A ver...</button>
+                    </div>
+                </div>
 
-                    <audio controls autoplay loop>
-                        <source src="https://www.youtube.com/watch?v=IlF0meDwfXI" type="audio/mpeg">
-                    </audio>
+                <!-- SECCIÓN 1: SOBRE MÍ -->
+                <div id="section-sobremi" class="dropdown-section">
+                    <fieldset style="padding: 15px; box-sizing: border-box;">
+                        <legend style="font-weight: bold; font-size: 15px; padding: 0 5px;">Presentación Personal</legend>
+                        <div style="display: flex; align-items: flex-start; gap: 20px;">
+                            <img src="media/w7Paintgif.gif" alt="MS Paint Animado" style="width: 120px; border: 1px solid #ccc; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+                            <p style="text-align:justify; margin: 0; font-size: 14px; flex: 1;">
+                                Estoy trabajando en ello, no moleste.
+                            </p>
+                        </div>
+                    </fieldset>
+                </div>
 
+                <!-- SECCIÓN 2: CARRERA -->
+                <div id="section-carrera" class="dropdown-section three-columns">
+                    <div class="column" style="font-size: 13px;">
+                        <fieldset style="height: 100%; box-sizing: border-box; padding: 10px;">
+                            <legend style="font-weight: bold; padding: 0 5px; font-size: 14px;">Técnico Microinformático y Redes</legend>
+                            <div style="display: flex; justify-content: center;">
+                                <ul style="text-align: left; padding-left: 20px; margin-top: 10px; display: inline-block;">
+                                    <li>Montaje y mantenimiento de equipos</li>
+                                    <li>Sistemas operativos monopuesto</li>
+                                    <li>Aplicaciones ofimáticas</li>
+                                    <li>Redes locales</li>
+                                    <li>Sistemas operativos en red</li>
+                                    <li>Seguridad informática</li>
+                                    <li>Servicios en red</li>
+                                    <li>Aplicaciones web</li>
+                                </ul>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="column" style="font-size: 13px;">
+                        <fieldset style="height: 100%; box-sizing: border-box; padding: 10px;">
+                            <legend style="font-weight: bold; padding: 0 5px; font-size: 14px;">Desarrollador de Aplicaciones WEB y Bases de Datos</legend>
+                            <div style="display: flex; justify-content: center;">
+                                <ul style="text-align: left; padding-left: 20px; margin-top: 10px; display: inline-block;">
+                                    <li>Frontend: HTML5, CSS3, SASS, Bootstrap</li>
+                                    <li>Sistemas informáticos: SOs, Redes</li>
+                                    <li>Bases de Datos relacionales (MySQL)</li>
+                                    <li>Entornos de desarrollo: Github, Docker</li>
+                                    <li>Programación: Java, JavaPOO, JavaFX</li>
+                                    <li>Cliente: Javascript, AJAX, DOM</li>
+                                    <li>Servidor: PHP, PHPPOO, Acceso a Datos</li>
+                                    <li>Despliegue Servidor: Java Servlet</li>
+                                </ul>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="column" style="font-size: 13px;">
+                        <fieldset style="height: 100%; box-sizing: border-box; padding: 10px;">
+                            <legend style="font-weight: bold; padding: 0 5px; font-size: 14px;">Diseñador de Videojuegos y Artista 3D</legend>
+                            <div style="display: flex; justify-content: center;">
+                                <ul style="text-align: left; padding-left: 20px; margin-top: 10px; display: inline-block;">
+                                    <li>Unity (C#): FSM, AI, Realidad Virtual, Realidad Aumentada, Multijugador</li>
+                                    <li>3D: Blender, High/Low Poly, Escultura</li>
+                                    <li>Texturizado: Substance Painter, Photoshop</li>
+                                    <li>Gestión: GDD, PITCH, SCRUM y JIRA</li>
+                                    <li>Autodidacta: Rig, Animación, Sonido</li>
+                                </ul>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 3: PROYECTOS -->
+                <div id="section-proyectos" class="dropdown-section">
+                    <fieldset style="padding: 10px; box-sizing: border-box;">
+                        <legend style="font-weight: bold; font-size: 15px; padding: 0 5px;">Portfolio de Proyectos</legend>
+                        <div class="project-grid">
+                            <div class="project-card">
+                                <img src="media/code.png" alt="Proyecto 1">
+                                <p>test</p>
+                                <a href="#">test</a>
+                            </div>
+                            <div class="project-card">
+                                <img src="media/code.png" alt="Proyecto 2">
+                                <p>test</p>
+                                <a href="#">test</a>
+                            </div>
+                            <div class="project-card">
+                                <img src="media/code.png" alt="Proyecto 3">
+                                <p>test</p>
+                                <a href="#">test</a>
+                            </div>
+                            <!-- Puedes añadir más proyectos replicando estos bloques div -->
+                        </div>
+                    </fieldset>
+                </div>
+
+            </div>
+        </div>
+
+        <audio id="bg-audio" autoplay loop src="media/music/frutiger aero - temcandoanything.mp3"></audio>
+
+        <div style="display: flex; gap: 1%; margin: 1%;">
+            <!-- Enlaces Externos -->
+            <div class="window active" style="flex: 2;">
+                <div class="title-bar">
+                    <div class="title-bar-text">
+                        <p style="margin: 0px; border:0px; padding:0px;">
+                            <img src="media/info_externallinks.png" alt="Favicon" width="16" height="16">
+                            External Links and Credits - Jozaru
+                        </p>
+                    </div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Minimize"></button>
+                        <button aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="window-body has-space" style="display: flex; justify-content: space-between; flex-wrap: wrap; padding: 10px;">
+                    <div style="flex: 1;">
+                        <p><img src="media/wizard_wordart.png" alt="" width="16" height="16" style="vertical-align: middle; margin-right: 5px;"> <a href="https://www.makewordart.com/" target="_blank">MakeWordArt</a></p>
+                        <p><img src="media/shortcut_icon_7cssframework.png" alt="" width="16" height="16" style="vertical-align: middle; margin-right: 5px;"> <a href="https://khang-nd.github.io/7.css" target="_blank">7.css Framework</a></p>
+                        <p><img src="media/screensaver_Windows_Icons.png" alt="" width="16" height="16" style="vertical-align: middle; margin-right: 5px;"> <a href="https://www.iconshock.com/windows-icons/general-icons/linkedin-icon/" target="_blank">Windows Icons</a></p>
+                    </div>
+                    <div style="flex: 1;">
+                        <p><img src="media/linkedin.png" alt="" width="16" height="16" style="vertical-align: middle; margin-right: 5px;"> <a href="https://www.linkedin.com/in/jose-zafrilla-ruiz/" target="_blank">LinkedIn: Jose Zafrilla Ruiz</a></p>
+                        <p><img src="media/briefcase_github.png" alt="" width="16" height="16" style="vertical-align: middle; margin-right: 5px;"> <a href="https://github.com/Jozaru27" target="_blank">GitHub: Jozaru27</a></p>
+                        <p><img src="media/youtube.png" alt="" width="16" height="16" style="vertical-align: middle; margin-right: 5px;"> <a href="https://www.youtube.com/watch?v=x5xpM0Izc0I" target="_blank">YouTube: Frutiger Aero - temcandoanything</a></p>
+                    </div>
                 </div>
             </div>
 
-              <div class="window glass active" style="max-width: 100%; margin: 1%;" >
+            <!-- Panel Reproductor -->
+            <div class="window active" style="flex: 1;">
                 <div class="title-bar">
-                
-                <div class="title-bar-text">
-                    <p style="margin: 0px; border:0px; padding:0px;">
-                        <img src="media/.ico" alt="Favicon" width="16" height="16">
-                        External Links and Credits - Jozaru
-                    </p>
-                    <p>https://www.makewordart.com/</p>
-                    <p>https://khang-nd.github.io/7.css</p>
+                    <div class="title-bar-text">
+                        <p style="margin: 0px; border:0px; padding:0px;">
+                            <img src="media/media_player.png" alt="Favicon" width="16" height="16">
+                            Windows Media Player
+                        </p>
+                    </div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Minimize"></button>
+                        <button aria-label="Close"></button>
+                    </div>
                 </div>
-                <div class="title-bar-controls">
-                    <button aria-label="Minimize"></button>
-                    <button aria-label="Close"></button>
+                <div class="window-body has-space" style="text-align: center;">
+                    <p style="margin: 0 0 5px 0; font-weight: bold;">🎶 Música Ambiente</p>
+                    <p style="font-size: 11px; margin: 0 0 15px 0; color: #555;">Reproduciendo: Frutiger Aero - temcandoanything</p>
+                    <div style="margin-bottom: 20px;">
+                        <button onclick="document.getElementById('bg-audio').play()"><img src="media/play.png" alt="" width="14" height="14" style="vertical-align: middle;"> Play</button>
+                        <button onclick="document.getElementById('bg-audio').pause()"><img src="media/pause.png" alt="" width="14" height="14" style="vertical-align: middle;"> Pausa</button>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 5px;">
+                        <span>🔈</span>
+                        <input type="range" class="has-custom-focus" min="0" max="100" value="50" oninput="document.getElementById('bg-audio').volume = this.value / 100" style="width: 70%;">
+                        <span>🔊</span>
+                    </div>
                 </div>
-                </div>
-                <div class="window-body has-space">
-                </div>
-        </div>
+            </div>
 
-        
-    </body>
+        </div>
+    </div>
+
+    <!-- Script de Pestañas (Secciones) -->
+    <script>
+        function toggleSection(id) {
+            const sections = ['section-sobremi', 'section-carrera', 'section-proyectos'];
+            const target = document.getElementById(id);
+            const isCurrentlyOpen = target.classList.contains('show');
+
+            // Cierra todas
+            sections.forEach(secId => {
+                document.getElementById(secId).classList.remove('show');
+            });
+
+            // Si la que clicamos estaba cerrada, la abre.
+            if (!isCurrentlyOpen) {
+                target.classList.add('show');
+            }
+        }
+    </script>
+</body>
+
 </html>
