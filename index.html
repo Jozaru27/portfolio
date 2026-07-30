@@ -185,19 +185,19 @@
 
                 <div class="three-columns">
                     <div class="column">
-                        <img src="media/attachment_sobremi.png" alt="About Me">
-                        <p>Sobre mí</p>
-                        <button onclick="toggleSection('section-sobremi')">A ver...</button>
-                    </div>
-                    <div class="column">
-                        <img src="media/browse_carrera.png" alt="Carrera">
-                        <p>Carrera</p>
-                        <button onclick="toggleSection('section-carrera')">A ver...</button>
+                        <img src="media/browse_carrera.png" alt="Formación">
+                        <p>Formación</p>
+                        <button onclick="toggleSection('section-formacion')">A ver...</button>
                     </div>
                     <div class="column">
                         <img src="media/blogging_proyectos.png" alt="Proyectos">
                         <p>Proyectos</p>
                         <button onclick="toggleSection('section-proyectos')">A ver...</button>
+                    </div>
+                    <div class="column">
+                        <img src="media/attachment_sobremi.png" alt="Sobre mí">
+                        <p>Sobre mí</p>
+                        <button onclick="toggleSection('section-sobremi')">A ver...</button>
                     </div>
                 </div>
 
@@ -214,8 +214,8 @@
                     </fieldset>
                 </div>
 
-                <!-- SECCIÓN 2: CARRERA -->
-                <div id="section-carrera" class="dropdown-section three-columns">
+                <!-- SECCIÓN 2: FORMACIÓN -->
+                <div id="section-formacion" class="dropdown-section three-columns">
                     <div class="column" style="font-size: 13px;">
                         <fieldset style="height: 100%; box-sizing: border-box; padding: 10px;">
                             <legend style="font-weight: bold; padding: 0 5px; font-size: 14px;">Técnico Microinformático y Redes</legend>
@@ -360,7 +360,7 @@
     <!-- Script de Pestañas (Secciones) -->
     <script>
         function toggleSection(id) {
-            const sections = ['section-sobremi', 'section-carrera', 'section-proyectos'];
+            const sections = ['section-sobremi', 'section-formacion', 'section-proyectos'];
             const target = document.getElementById(id);
             const isCurrentlyOpen = target.classList.contains('show');
 
