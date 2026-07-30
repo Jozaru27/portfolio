@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyecto: [Título del Proyecto 2]</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/7.css@0.10.0/dist/7.css">
+    <link rel="icon" type="image/x-icon" href="media/address_book_favicon.png">
+    <style>
+        body, html {
+            cursor: url('media/cursor/Normal%20Select.cur'), auto !important;
+        }
+        a, button, [role="button"], [onclick], input, .can-hover, summary {
+            cursor: url('media/cursor/Link%20Select.cur'), pointer !important;
+        }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-image: url('media/windowsvista.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: sans-serif;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .header-project {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid #ccc;
+        }
+        .header-links {
+            display: flex;
+            gap: 10px;
+        }
+        .section-margin {
+            margin-bottom: 20px;
+        }
+        .tools-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+        .tool-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .tool-icon img {
+            width: 48px;
+            height: 48px;
+        }
+        .gif-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .gif-card {
+            border: 1px solid #dfdfdf;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.4);
+            text-align: center;
+        }
+        .gif-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
+        }
+        .gif-card p {
+            font-weight: bold;
+            margin: 5px 0 2px;
+        }
+        .gif-card span {
+            font-size: 11px;
+            color: #222;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .image-grid img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+            transition: transform 0.2s ease;
+        }
+        .image-grid img:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+        .footer-project {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ccc;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="window active">
+            <div class="title-bar">
+                <div class="title-bar-text">
+                    <p style="margin: 0px; border:0px; padding:0px;">
+                        <img src="media/browser.ico" alt="Icon" width="16" height="16" style="vertical-align: middle; margin-right: 5px;">
+                        Proyecto: [Título del Proyecto 2]
+                    </p>
+                </div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize" onclick="location.href='index.html'"></button>
+                    <button aria-label="Close" onclick="location.href='index.html'"></button>
+                </div>
+            </div>
+            <div class="window-body has-space">
+                <!-- Portada / Cabecera -->
+                <div class="header-project">
+                    <h1 style="margin: 0; font-size: 26px; font-family: 'Trebuchet MS', sans-serif; font-weight: bold; color: #1e3f66;">[Título del Proyecto 2]</h1>
+                    <div class="header-links">
+                        <button onclick="window.open('https://github.com/Jozaru27', '_blank')">
+                            <img src="media/briefcase_github.png" width="16" height="16" style="vertical-align: middle; margin-right: 5px;">
+                            GitHub Repository
+                        </button>
+                        <button onclick="window.open('https://jozaru.itch.io/', '_blank')">
+                            <img src="media/browser.ico" width="16" height="16" style="vertical-align: middle; margin-right: 5px;">
+                            Itch.io Page
+                        </button>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <img src="media/code.png" alt="Portada Proyecto" style="width: 100%; max-height: 400px; object-fit: contain; border: 1px solid #ccc; background: #e0e0e0; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+                </div>
+
+                <!-- Sobre el proyecto -->
+                <div class="section-margin">
+                    <fieldset>
+                        <legend style="font-weight: bold; font-size: 14px;">Sobre el proyecto</legend>
+                        <p style="text-align: justify; line-height: 1.5; margin: 10px;">
+                            Descripción del proyecto. Edita este archivo para añadir detalles sobre la aventura, mecánicas e historia de este proyecto.
+                        </p>
+                        <p style="text-align: justify; line-height: 1.5; margin: 10px 10px 5px; font-weight: bold;">
+                            Mi trabajo realizado:
+                        </p>
+                        <p style="text-align: justify; line-height: 1.5; margin: 0 10px 10px;">
+                            Detalles del trabajo realizado, aportaciones, funciones técnicas desarrolladas y optimización.
+                        </p>
+                    </fieldset>
+                </div>
+
+                <!-- Herramientas usadas -->
+                <div class="section-margin">
+                    <fieldset>
+                        <legend style="font-weight: bold; font-size: 14px;">Herramientas usadas</legend>
+                        <div class="tools-grid">
+                            <div class="tool-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity">
+                                <span>Unity</span>
+                            </div>
+                            <div class="tool-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" alt="Blender">
+                                <span>Blender</span>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <!-- Gameplay -->
+                <div class="section-margin">
+                    <fieldset>
+                        <legend style="font-weight: bold; font-size: 14px;">Apartado de Gameplay</legend>
+                        <div style="width: 100%; height: 350px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; border: 1px solid #ccc; font-weight: bold; color: #555; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            [Aquí puedes incrustar un vídeo de YouTube reemplazando este div por un iframe]
+                        </div>
+                    </fieldset>
+                </div>
+
+                <!-- Gifs demostrativos -->
+                <div class="section-margin">
+                    <fieldset>
+                        <legend style="font-weight: bold; font-size: 14px;">Gifs demostrativos</legend>
+                        <div class="gif-grid">
+                            <div class="gif-card">
+                                <img src="media/code.png" alt="Mecánica 1" style="object-fit: contain; background: #e0e0e0;">
+                                <p>[Mecánica 1]</p>
+                                <span>Breve descripción de la primera mecánica o característica del juego.</span>
+                            </div>
+                            <div class="gif-card">
+                                <img src="media/code.png" alt="Mecánica 2" style="object-fit: contain; background: #e0e0e0;">
+                                <p>[Mecánica 2]</p>
+                                <span>Breve descripción de la segunda mecánica o característica del juego.</span>
+                            </div>
+                            <div class="gif-card">
+                                <img src="media/code.png" alt="Mecánica 3" style="object-fit: contain; background: #e0e0e0;">
+                                <p>[Mecánica 3]</p>
+                                <span>Breve descripción de la tercera mecánica o característica del juego.</span>
+                            </div>
+                            <div class="gif-card">
+                                <img src="media/code.png" alt="Mecánica 4" style="object-fit: contain; background: #e0e0e0;">
+                                <p>[Mecánica 4]</p>
+                                <span>Breve descripción de la cuarta mecánica o característica del juego.</span>
+                            </div>
+                            <div class="gif-card" style="grid-column: span 2;">
+                                <img src="media/code.png" alt="Mecánica 5" style="object-fit: contain; height: 180px; background: #e0e0e0;">
+                                <p>[Mecánica 5]</p>
+                                <span>Breve descripción de la quinta mecánica o característica del juego.</span>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <!-- Galería de imágenes -->
+                <div class="section-margin">
+                    <fieldset>
+                        <legend style="font-weight: bold; font-size: 14px;">Galería de Imágenes</legend>
+                        <div class="image-grid">
+                            <img src="media/code.png" alt="Screenshot 1" style="object-fit: contain; background: #e0e0e0;">
+                            <img src="media/code.png" alt="Screenshot 2" style="object-fit: contain; background: #e0e0e0;">
+                            <img src="media/code.png" alt="Screenshot 3" style="object-fit: contain; background: #e0e0e0;">
+                            <img src="media/code.png" alt="Screenshot 4" style="object-fit: contain; background: #e0e0e0;">
+                        </div>
+                        <div class="image-grid" style="margin-top: 10px;">
+                            <img src="media/code.png" alt="Screenshot 5" style="object-fit: contain; background: #e0e0e0;">
+                            <img src="media/code.png" alt="Screenshot 6" style="object-fit: contain; background: #e0e0e0;">
+                            <img src="media/code.png" alt="Screenshot 7" style="object-fit: contain; background: #e0e0e0;">
+                            <img src="media/code.png" alt="Screenshot 8" style="object-fit: contain; background: #e0e0e0;">
+                        </div>
+                    </fieldset>
+                </div>
+
+                <!-- Botón Atrás -->
+                <div style="text-align: center; margin-top: 25px; margin-bottom: 10px;">
+                    <button onclick="location.href='index.html'" style="font-weight: bold; padding: 5px 25px;">Volver al Portfolio</button>
+                </div>
+
+                <!-- Pie de página de contacto -->
+                <div class="footer-project">
+                    <p style="font-size: 12px; margin-bottom: 10px; font-weight: bold; color: #333;">Contacto del Desarrollador</p>
+                    <div style="display: flex; justify-content: center; gap: 15px; align-items: center;">
+                        <button onclick="location.href='mailto:j.zafrillaruiz@gmail.com'">
+                            <img src="media/address_book_favicon.png" width="16" height="16" style="vertical-align: middle; margin-right: 5px;">
+                            Enviar Correo
+                        </button>
+                        <a href="https://github.com/Jozaru27" target="_blank" style="text-decoration: none; color: #0066cc; font-weight: bold; font-size: 13px;">GitHub</a>
+                        <a href="https://jozaru.itch.io/" target="_blank" style="text-decoration: none; color: #cc3333; font-weight: bold; font-size: 13px;">Itch.io</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
